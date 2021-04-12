@@ -1,5 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Platform } from 'react-native';
+import { AuthContext } from '../../contexts/auth' 
+
 import { 
   Background, 
   Container,
@@ -14,6 +16,12 @@ export default function SignUp() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
+  const { signUp } = useContext(AuthContext);
+
+  function handleSignUp(){    
+    signUp(email, password, nome)
+  }
+
  return (
     <Background>
       <Container
@@ -26,7 +34,7 @@ export default function SignUp() {
           placeholder="Nome"
           autoCorrect={false}
           autoCapitalize="none"
-          value={nome}
+          defaultValue={nome}
           onChageText={ (text) => setNome(text) }
           />
         </AreaInput>
@@ -36,7 +44,7 @@ export default function SignUp() {
           placeholder="Email"
           autoCorrect={false}
           autoCapitalize="none"
-          value={email}
+          defaultValue={email}
           onChageText={ (text) => setEmail(text) }
           />
         </AreaInput>
@@ -46,12 +54,12 @@ export default function SignUp() {
           placeholder="Senha"
           autoCorrect={false}
           autoCapitalize="none"
-          value={password}
+          defaultValue={password}
           onChageText={ (text) => setPassword(text) }
           />
         </AreaInput>
 
-        <SubmitButton>
+        <SubmitButton onPress={handleSignUp}>
           <SubmitText>Cadastrar</SubmitText>
         </SubmitButton>
 

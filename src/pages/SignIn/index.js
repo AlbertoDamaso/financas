@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Platform } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import { AuthContext } from '../../contexts/auth';
 
 import { 
   Background, 
@@ -20,6 +21,10 @@ export default function SignIn() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
+  function handleLogin(){
+
+  }
+
  return (
     <Background>
       <Container
@@ -33,7 +38,7 @@ export default function SignIn() {
           placeholder="Email"
           autoCorrect={false}
           autoCapitalize="none"
-          value={email}
+          defaultValue={email}
           onChageText={ (text) => setEmail(text) }
           />
         </AreaInput>
@@ -43,12 +48,12 @@ export default function SignIn() {
           placeholder="Senha"
           autoCorrect={false}
           autoCapitalize="none"
-          value={password}
+          defaultValue={password}
           onChageText={ (text) => setPassword(text) }
           />
         </AreaInput>
 
-        <SubmitButton>
+        <SubmitButton onPress={handleLogin}>
           <SubmitText>Acessar</SubmitText>
         </SubmitButton>
 
