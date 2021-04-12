@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { Platform } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+
 import { 
   Background, 
   Container,
@@ -13,6 +15,8 @@ import {
 } from './styles';
 
 export default function SignIn() {
+  const navigation = useNavigation();
+
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -48,7 +52,7 @@ export default function SignIn() {
           <SubmitText>Acessar</SubmitText>
         </SubmitButton>
 
-        <Link>
+        <Link onPress={ () => navigation.navigate('SignUp')}>
           <LinkText>Criar uma Conta!</LinkText>
         </Link>
 
