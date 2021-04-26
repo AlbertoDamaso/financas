@@ -1,23 +1,21 @@
-import firebase from 'firebase/app'
-import 'firebase/auth'
-import 'firebase/database'
+import firebase from 'firebase/app';
+import 'firebase/auth';
+import 'firebase/database';
 
 let firebaseConfig = {
-  apiKey: "AIzaSyB67YziQWcceLYzvcDtIJ6ahXm12q-7TxM",
-  authDomain: "financas-9e575.firebaseapp.com",
-  databaseURL: "https://financas-9e575-default-rtdb.firebaseio.com",
-  projectId: "financas-9e575",
-  storageBucket: "financas-9e575.appspot.com",
-  messagingSenderId: "759174999706",
-  appId: "1:759174999706:web:8227a8d7119d313cffb923",
-  measurementId: "G-Z7S19RBE6P"
+  apiKey: "AIzaSyBzmbmRi4Ewem1Nbn9OcEAQHDuSNWzOZHI",
+  authDomain: "test-b9bcf.firebaseapp.com",
+  projectId: "test-b9bcf",
+  storageBucket: "test-b9bcf.appspot.com",
+  messagingSenderId: "263130363844",
+  appId: "1:263130363844:web:03db90739c78dc80d59691",
+  measurementId: "G-761DZ4DVLM"
 };
+
 
 if(!firebase.apps.length){
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
-  firebase.analytics();
-  
 }
 
 export default firebase;
