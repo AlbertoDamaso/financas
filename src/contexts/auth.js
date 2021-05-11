@@ -46,8 +46,9 @@ function AuthProvider({ children }){
     async function signUp(email, password, nome){
         await firebase.auth().createUserWithEmailAndPassword(email, password)
         .then(async (value) =>{
+            alert('Usuario criado: ' + value.user.email);
             let uid = value.user.uid;
-            await firebase.database().ref('users').child(uid).set({
+            await firebase.database().ref('users').child(uid).set({                
                 saldo: 0,
                 nome: nome
             })
@@ -60,6 +61,19 @@ function AuthProvider({ children }){
                 setUser(data);
                 storageUser(data);
             })
+        })
+        .catch( (error) => {
+            if(error.code === 'auth/weak-password'){
+              alert('Sua senha deve ter pelo menos 6 caracteres');
+              return;
+            }
+            if(error.code === 'auth/invalid-email'){
+              alert('Email invalido');
+              return;
+            }else{
+              alert('Ops algo deu errado!');
+              return;
+            }      
         })
     }
 

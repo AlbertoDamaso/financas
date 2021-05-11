@@ -19,7 +19,7 @@ export default function SignUp() {
   const { signUp } = useContext(AuthContext);
 
   function handleSignUp(){    
-    signUp(email, password, nome)
+    signUp(email, password, nome)    
   }
 
  return (
@@ -34,8 +34,8 @@ export default function SignUp() {
           placeholder="Nome"
           autoCorrect={false}
           autoCapitalize="none"
-          defaultValue={nome}
-          onChageText={ (text) => setNome(text) }
+          value={nome}
+          onChangeText={ (text) => setNome(text) }
           />
         </AreaInput>
 
@@ -44,8 +44,8 @@ export default function SignUp() {
           placeholder="Email"
           autoCorrect={false}
           autoCapitalize="none"
-          defaultValue={email}
-          onChageText={ (text) => setEmail(text) }
+          value={email}
+          onChangeText={ (text) => setEmail(text) }
           />
         </AreaInput>
 
@@ -54,8 +54,9 @@ export default function SignUp() {
           placeholder="Senha"
           autoCorrect={false}
           autoCapitalize="none"
-          defaultValue={password}
-          onChageText={ (text) => setPassword(text) }
+          value={password}
+          onChangeText={ (text) => setPassword(text) }
+          secureTextEntry={true}
           />
         </AreaInput>
 

@@ -3,13 +3,14 @@ import 'firebase/auth';
 import 'firebase/database';
 
 let firebaseConfig = {
-  apiKey: "AIzaSyBzmbmRi4Ewem1Nbn9OcEAQHDuSNWzOZHI",
-  authDomain: "test-b9bcf.firebaseapp.com",
-  projectId: "test-b9bcf",
-  storageBucket: "test-b9bcf.appspot.com",
-  messagingSenderId: "263130363844",
-  appId: "1:263130363844:web:03db90739c78dc80d59691",
-  measurementId: "G-761DZ4DVLM"
+  apiKey: "AIzaSyAkpD3Kkrtgr0NqLpuOLsCLKv7TDVlG7Ag",
+  authDomain: "finacas-f19fa.firebaseapp.com",
+  databaseURL: "https://finacas-f19fa-default-rtdb.firebaseio.com",
+  projectId: "finacas-f19fa",
+  storageBucket: "finacas-f19fa.appspot.com",
+  messagingSenderId: "83244431760",
+  appId: "1:83244431760:web:6ed55df15288f19ed15b15",
+  measurementId: "G-R8ZXKZ3VTM"
 };
 
 
