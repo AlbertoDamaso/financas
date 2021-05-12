@@ -1,17 +1,25 @@
 import React, { useContext } from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, Button } from 'react-native';
 import { AuthContext } from '../../contexts/auth';
+import { Background, Container, Nome, Saldo, Title } from './styles';
+import Header from '../../components/Header';
+
+console.disableYellowBox = true; 
 
 export default function Home() {
 
   const { user } = useContext(AuthContext)
 
  return (
-    <View>
-        <Text>Home</Text>
-        <Text>{ user && user.nome }</Text>
-        <Text>{ user && user.email }</Text>
-    </View>
+    <Background>
+      <Header/>
+      <Container>
+        <Nome>Alberto</Nome>
+        <Saldo>R$ 555,00</Saldo>
+      </Container>
+
+      <Title>Ultimas movimentações</Title>
+    </Background>
    
   );
 }

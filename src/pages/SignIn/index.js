@@ -17,7 +17,6 @@ import {
 
 export default function SignIn() {
   const navigation = useNavigation();
-
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const { signIn } = useContext(AuthContext);
@@ -39,8 +38,8 @@ export default function SignIn() {
           placeholder="Email"
           autoCorrect={false}
           autoCapitalize="none"
-          defaultValue={email}
-          onChageText={ (text) => setEmail(text) }
+          value={email}
+          onChangeText={ (text) => setEmail(text) }
           />
         </AreaInput>
 
@@ -49,8 +48,9 @@ export default function SignIn() {
           placeholder="Senha"
           autoCorrect={false}
           autoCapitalize="none"
-          defaultValue={password}
-          onChageText={ (text) => setPassword(text) }
+          value={password}
+          onChangeText={ (text) => setPassword(text) }
+          secureTextEntry={true}
           />
         </AreaInput>
 
