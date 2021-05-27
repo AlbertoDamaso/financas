@@ -30,8 +30,8 @@ export default function Home() {
 
       await firebase.database().ref('historico')
       .child(uid)
-      .orderByChild('date').equalTo(format(newDate, 'dd/MM/yyyy'))
-      .limitToLast(10).on('value', (snapshot)=>{
+      .orderByChild('date').limitToLast(50)
+      .on('value', (snapshot)=>{
         setHistorico([]);
 
         snapshot.forEach((childItem) => {

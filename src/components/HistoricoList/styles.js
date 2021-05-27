@@ -31,3 +31,15 @@ color: #222;
 font-size: 22px;
 font-weight: bold;
 `;
+
+export const Data = styled.Text`
+color: #222;
+font-size: 22px;
+`;
+
+export const Itens = styled.View`
+flex-direction: row;
+justify-content: space-between;
+margin-left: 16px;
+margin-right: 26px;
+`;
