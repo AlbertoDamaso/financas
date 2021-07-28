@@ -13,6 +13,7 @@ export default function New() {
   const navigation = useNavigation();
   const [valor, setValor] = useState('');
   const [tipo, setTipo] = useState(null);
+  const [desc, setDesc] = useState('');
   const { user:usuario } = useContext(AuthContext);
 
   function handleSubmit(){
@@ -44,7 +45,8 @@ export default function New() {
     await firebase.database().ref('historico').child(uid).child(key).set({
       tipo: tipo,
       valor: parseFloat(valor),
-      date: format(new Date(), 'dd/MM/yyyy')
+      date: format(new Date(), 'dd/MM/yyyy'),
+      desc: desc
     })
 
     //Atualizar o saldo
@@ -68,6 +70,7 @@ export default function New() {
         <Header/>
 
         <SafeAreaView style={{alignItems:'center'}}>
+
           <Input
             placeholder="Valor desejado"
             keyboardType="numeric"
@@ -78,6 +81,12 @@ export default function New() {
           />    
 
           <Picker onChange={setTipo}/>    
+
+          <Input
+            placeholder="Descrição simples"
+            value={desc}
+            onChangeText={ (text) => setDesc(text) }
+          />    
 
           <SubmitButton onPress={handleSubmit}>
             <SubmitText>Registrar</SubmitText>
